@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة احترافية</title>
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- ربط Bootstrap -->
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>مرحبًا بك في موقعي الاحترافي</h1>
+        <p>هذا مثال لصفحة ويب احترافية باستخدام HTML وCSS</p>
+    </header>
+
+    <!-- قائمة التنقل -->
+    <nav>
+        <a href="#" class="nav-contact" onclick="showContactModal()">اتصل بنا</a>
+        <a href="#">الخدمات</a>
+        <a href="#">استراحة</a>
+        <a href="#">الاحصائية</a>
+        <a href="#">الصادر</a>
+        <a href="#">الوارد</a>
+        <a href="#">الرئيسية</a>
+    </nav>
+
+    <!-- محتوى الصفحة -->
+    <section>
+        <h2>نبذة عن الموقع</h2>
+        <p>هذا الموقع تم تصميمه كأحد الأمثلة الاحترافية على تصميم صفحات الويب باستخدام HTML وCSS. يمكنك التعديل عليه وتخصيصه حسب احتياجاتك.</p>
+        <img src="assets/images/2904.jpg" alt="وصف الصورة" class="img-fluid">
+        <button onclick="alert('شكراً لزيارتك!')">اضغط هنا</button>
+    </section>
+
+    <!-- المودال الخاص بالاتصال -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">اتصل بنا</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                </div>
+                <div class="modal-body">
+                    <p>مرحباً! نحن هنا للمساعدة 😊.</p>
+                    <p>هل تحتاج إلى مساعدة؟ يمكنك التواصل معنا عبر:</p>
+                    <ul>
+                        <li>الهاتف: 00201064526023</li>
+                        <li>البريد الإلكتروني: <a href="mailto:abukora@outlook.com">abukora@outlook.com</a></li>
+                        <li>البريد الإلكتروني الاحتياطي: <a href="mailto:mohamedkoru859@gmail.com">mohamedkoru859@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="sendEmail()">أرسل بريدًا</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ذيل الصفحة -->
+    <footer>
+        <p>&copy; 2024 جميع الحقوق محفوظة. تصميم: موقعي</p>
+    </footer>
+
+    <!-- تضمين مكتبة Bootstrap وJavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // عرض نافذة "اتصل بنا"
+        function showContactModal() {
+            const modal = new bootstrap.Modal(document.getElementById('contactModal'));
+            modal.show();
+        }
+
+        // فتح البريد الإلكتروني
+        function sendEmail() {
+            window.location.href = "mailto:abukora@outlook.com?subject=طلب مساعدة&body=مرحبًا، أحتاج إلى مساعدة في موقعكم. شكراً لكم!";
+        }
+    </script>
+</body>
+</html>
